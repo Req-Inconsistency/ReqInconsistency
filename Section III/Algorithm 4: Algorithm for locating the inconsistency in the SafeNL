@@ -1,0 +1,14 @@
+Input: 
+reCG = (reC, reA): cycle extended clock graph
+ST={<si,CGi>|1≤i≤n}
+Output: 
+CR: a set of safeNL of circular dependency 
+
+CR = null;
+for each st of ST
+	statePairSet = getStatePair(CG);
+	if(∀<state.s,state.f> ∈ StatePairSet ∧ <state.s,state.f> ∈ reC)
+		keyCG = getKeySet(CG, statePairSet);
+		if(keyCG ∈ reCG)
+			CR = CR ∪ s;
+return CR;
